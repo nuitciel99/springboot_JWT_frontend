@@ -13,9 +13,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="/login" element={<LoginView />} />
-          <Route path="view/:id" element={<ListView />} />
+          <Route path="/view/:id" element={<ListView />} />
         </Routes>
       </BrowserRouter>
+      <div className="footer">
+        <p>footer</p>
+      </div>
     </div>
   );
 }

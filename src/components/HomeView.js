@@ -1,12 +1,12 @@
-import { Button, Container, Grid, TextField, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import { getRestaurants } from "../api/api";
 import { useEffect, useState } from "react";
+import { getRestaurants } from "../api/api";
+import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+
+const ACCESS_TOKEN = localStorage.getItem("ACCESS_TOKEN");
 
 function HomeView() {
   const [data, setData] = useState([]);
-  const ACCESS_TOKEN = localStorage.getItem("ACCESS_TOKEN");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,19 +30,13 @@ function HomeView() {
   return (
     <>
       <div className="container">
-        {data.length > 0 ? (
-          data.map((item, i) => {
-            return (
-              <>
-                <li key={i}>
-                  <Link to={`/view/${item.id}`}>{item.name}</Link>
-                </li>
-              </>
-            );
-          })
-        ) : (
-          <p>No Data</p>
-        )}
+        {data.map((item, i) => {
+          return (
+            <li key={i}>
+              <Link to={`/view/${item.id}`}>{item.name}</Link>
+            </li>
+          );
+        })}
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
+// const baseURL = "http://localhost:8081";
 const ACCESS_TOKEN = localStorage.getItem("ACCESS_TOKEN");
 
 const axiosInstance = axios.create({
@@ -17,6 +18,7 @@ export const postLogin = async (data) => {
     console.log(response.data.token);
     if (response.data.token) {
       localStorage.setItem("ACCESS_TOKEN", response.data.token);
+      window.location.href = "/";
     }
   } catch (error) {}
 };

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { getListView } from "../api/api";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function ListView() {
   const { id } = useParams();
@@ -11,9 +11,14 @@ function ListView() {
     const fetchData = async () => {
       try {
         const dataView = await getListView(id);
-        setListData(dataView);
-      } catch (error) {}
+        if (isMounted) {
+          setListData(dataView);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
+
     fetchData();
     return () => {
       isMounted = false;
@@ -22,9 +27,15 @@ function ListView() {
 
   return (
     <>
-      <div>{listData.id}</div>
+      {listData && (
+        <div>
+          {/* Render the viewData properties here */}
+          <h1>{listData.name}</h1>
+          <p>{listData.address}</p>
+          {/* Add more elements as needed */}
+        </div>
+      )}
     </>
   );
 }
-
 export default ListView;

@@ -1,7 +1,17 @@
 a:visited,
 a:link {
   text-decoration: none;
-  color: #333;
+  color: #404040;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
 }
 
 .hd {
@@ -20,7 +30,7 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 40px;
   align-self: center;
   padding: 0 20px;
   font-size: 18px;
@@ -29,5 +39,10 @@ a:link {
 
 .container {
   padding: 0 16px;
-  /* height: calc(100vh - 130px); */
+  /* background: rgb(234, 234, 234); */
+  height: calc(100vh - 139px);
+}
+
+.footer {
+  padding: 0 16px;
 }

@@ -5,21 +5,20 @@ function HeaderView() {
     localStorage.removeItem("ACCESS_TOKEN");
     window.location.href = "/";
   };
-
   return (
     <>
       <div className="hd">
-        <h1>Company</h1>
+        <h1>company</h1>
         <div className="utilMenu">
-          <Link to="/">Home</Link>
-          <Link to="/login">Login</Link>
+          <Link to="/">home</Link>
+          <Link to="/login">login</Link>
           <a
             href="javascript:void(0)"
             onClick={() => {
               Logout();
             }}
           >
-            Logout
+            logout
           </a>
         </div>
       </div>
