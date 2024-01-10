@@ -7,6 +7,24 @@
 
 - JWT : https://jwt.io/
 
+# Api test with swagger
+
+- Swagger Main
+
+![api 목록](./readMeImgs/swaggermain.png)
+
+- Swagger SignUp
+
+![api 목록](./readMeImgs/swaggersignup.png)
+
+- Swagger Login
+
+![api 목록](./readMeImgs/swaggerlogin.png)
+
+- JWT.io
+
+![api 목록](./readMeImgs/jwtio.png)
+
 # Authentication & Authorization
 
 - Authentication: 인증 (로그인)
