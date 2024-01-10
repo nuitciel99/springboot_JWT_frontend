@@ -28,7 +28,7 @@
 # Authentication & Authorization
 
 - Authentication: 인증 (로그인)
-- Authorization: 권한 부여 (로그인 상태 유지) => 세션, JWT
+- Authorization: 권한 부여 (로그인 상태 유지) => Session, JWT
 
 # Session(+Cookie) & JWT
 
